@@ -1,0 +1,18 @@
+{
+  "name": "kingdoms-of-emberfall",
+  "version": "1.0.0",
+  "description": "A fully playable top-down browser RPG built with HTML5 Canvas, WebAudio, CSS, and vanilla JavaScript.",
+  "private": false,
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "check": "find . -name '*.js' -not -path './.git/*' -exec node --check {} \\;"
+  },
+  "keywords": [
+    "browser-game",
+    "rpg",
+    "canvas",
+    "webaudio",
+    "vanilla-javascript"
+  ],
+  "license": "MIT"
+}

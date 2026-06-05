@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdoms of Emberfall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-shell">
+    <div id="loadCurtain" class="load-curtain hidden" aria-live="polite">
+      <div class="load-curtain-inner">
+        <p class="load-title">Restoring your journey</p>
+        <p class="load-sub">World, quests, and inventory</p>
+      </div>
+    </div>
+    <canvas id="game" width="1280" height="720" tabindex="0" aria-label="Kingdoms of Emberfall game canvas"></canvas>
+
+    <div id="hud" class="hud">
+      <div class="vitals">
+        <div class="bar health"><span></span><b>HP</b></div>
+        <div class="bar mana"><span></span><b>MP</b></div>
+        <div class="bar stamina"><span></span><b>STA</b></div>
+      </div>
+      <div class="day-panel">
+        <div id="timeLabel">Dawn, Day 1</div>
+        <div id="weatherLabel">Clear</div>
+        <div id="saveLine" class="save-line">—</div>
+      </div>
+      <div id="questTracker" class="quest-tracker"></div>
+      <canvas id="minimap" width="168" height="120" class="minimap"></canvas>
+      <button id="minimapZoom" class="minimap-zoom" title="Toggle minimap zoom" aria-label="Toggle minimap zoom">+</button>
+      <div id="compass" class="compass" aria-hidden="true">
+        <div class="compass-line"></div>
+        <div class="compass-cardinals"></div>
+        <div class="compass-landmarks"></div>
+        <div class="compass-quest-marker"></div>
+      </div>
+      <div id="actionHud" class="action-hud" aria-hidden="true">
+        <div class="cd-slot" title="Blade (J / click)"><span class="cd-key">J</span><div class="cd-track"><div class="cd-fill cd-blade"></div></div></div>
+        <div class="cd-slot" title="Bow (K)"><span class="cd-key">K</span><div class="cd-track"><div class="cd-fill cd-bow"></div></div></div>
+        <div class="cd-slot" title="Magic (L)"><span class="cd-key">L</span><div class="cd-track"><div class="cd-fill cd-magic"></div></div></div>
+        <div class="cd-slot" title="Dodge (Q)"><span class="cd-key">Q</span><div class="cd-track"><div class="cd-fill cd-dodge"></div></div></div>
+      </div>
+    </div>
+
+    <div id="dialogueBox" class="panel dialogue hidden">
+      <div class="speaker"></div>
+      <div class="body"></div>
+      <div class="choices"></div>
+    </div>
+
+    <div id="toastLog" class="toast-log"></div>
+
+    <div id="menu" class="panel menu hidden" role="dialog" aria-modal="true">
+      <div class="tabs">
+        <button data-tab="inventory">Inventory</button>
+        <button data-tab="quests">Journal</button>
+        <button data-tab="skills">Skills</button>
+        <button data-tab="map">World</button>
+        <button data-tab="house">House</button>
+        <button data-tab="help">Help</button>
+      </div>
+      <div id="menuContent" class="menu-content"></div>
+    </div>
+
+    <div id="shop" class="panel shop hidden">
+      <div class="shop-title"></div>
+      <div class="shop-grid"></div>
+    </div>
+
+    <div id="saveRibbon" class="save-ribbon hidden" role="status" aria-live="polite">
+      <span class="save-dot" aria-hidden="true"></span>
+      <span id="saveRibbonText">Progress saved</span>
+    </div>
+
+    <div id="titleScreen" class="title-screen">
+      <div class="title-art"></div>
+      <div class="title-copy">
+        <p>Kingdoms of</p>
+        <h1>Emberfall</h1>
+        <div class="title-actions">
+          <button id="newGame">New Game</button>
+          <button id="continueGame">Continue</button>
+        </div>
+        <div class="title-hint">WASD · Shift sprint · Q dodge · J/K/L combat · Space interact · Tab Journal & atlas · F lock-on · West gate: Long Vale</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="engine/core.js"></script>
+  <script src="engine/input.js"></script>
+  <script src="engine/assets.js"></script>
+  <script src="engine/audio.js"></script>
+  <script src="quests/data.js"></script>
+  <script src="dialogue/data.js"></script>
+  <script src="maps/data.js"></script>
+  <script src="systems/save.js"></script>
+  <script src="systems/inventory.js"></script>
+  <script src="systems/quest.js"></script>
+  <script src="systems/dialogue.js"></script>
+  <script src="systems/economy.js"></script>
+  <script src="systems/house.js"></script>
+  <script src="systems/weather.js"></script>
+  <script src="systems/combat.js"></script>
+  <script src="systems/guidance.js"></script>
+  <script src="entities/entity.js"></script>
+  <script src="entities/player.js"></script>
+  <script src="entities/npc.js"></script>
+  <script src="entities/enemy.js"></script>
+  <script src="entities/boss.js"></script>
+  <script src="systems/world.js"></script>
+  <script src="ui/ui.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
