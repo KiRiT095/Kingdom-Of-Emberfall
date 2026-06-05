@@ -12,6 +12,24 @@ Then visit:
 
 http://localhost:8000
 
+## Screenshots
+
+### Open World Exploration
+
+![Open World](Screenshots/Open%20world.png)
+
+### Town Area
+
+![Town](Screenshots/Town.png)
+
+### Dialogue System
+
+![Dialogue System](Screenshots/Dialogues.png)
+
+### Inventory System
+
+![Inventory](Screenshots/Inventory.png)
+
 Controls
 
 
